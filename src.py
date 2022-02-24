@@ -1,1 +1,2 @@
-print('Hello 1 world')
+for each in range(0,10):
+    print('line:'+ str(each))
