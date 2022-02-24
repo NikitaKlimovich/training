@@ -1,1 +1,1 @@
-# training
+Nikita Klimovich
