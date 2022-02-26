@@ -1,2 +1,2 @@
-for each1 in range(0,10):
+for line in range(0,10):
     print('line:'+ str(each))
