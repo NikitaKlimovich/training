@@ -34,5 +34,6 @@ def salary_list_2_2():
             else:
                 prod_dict[prod]+=1
     prod_dict=sorted(prod_dict.items(), key=lambda prod: prod[1], reverse=True)
+    return prod_dict[1:]
 
-print(cat_said('Hello world'))
+print(salary_list_2_2())
