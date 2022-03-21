@@ -1,3 +1,4 @@
+from email import message
 import json
 import os
 import sqlite3
@@ -122,7 +123,8 @@ def list_city(city):
     back='<a class="button" href="/index">Back</a>'
     data = get_data(city)
     if data['cod']=='404':
-        return f'{data.message}<br>{back}'
+        message=data['message']
+        return f'{message}<br>{back}'
     name = data['name']
     lon = data['coord']['lon']
     lat = data['coord']['lat']
@@ -162,7 +164,8 @@ def weather_past(city,date):
     back='<a class="button" href="/index">Back</a>'
     data = get_data(city)
     if data['cod']=='404':
-        return f'{data.message}<br>{back}'
+        message=data['message']
+        return f'{message}<br>{back}'
     name = data['name']
     lon = data['coord']['lon']
     lat = data['coord']['lat']
