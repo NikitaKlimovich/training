@@ -19,11 +19,11 @@ $ docker login --username < your_username > --password < your_password>
 2. Push image you created before to DockerHub:  
 
 
-$docker images                                                                    #get image repository, id and tag  
+$docker images &emsp;&emsp;&emsp; #get image repository, id and tag  
 
-$docker tag < image_id > < your_username >/< image_repository >:< image_tag >     #tag image  
+$docker tag < image_id > < your_username >/< image_repository >:< image_tag > &emsp; #tag image  
 
-$docker push < your_username >/< image_repository                                 #push image to DockerHub  
+$docker push < your_username >/< image_repository &emsp;&emsp; #push image to DockerHub  
 
 
 3. Create a secret:  
@@ -43,7 +43,8 @@ $ kubectl apply -f ./my_deployment.yaml
 5. Run port-forwarding on your computer:  
 
 
-$ kubectl get pods                                              #check if pods is ready  
+$ kubectl get pods &emsp;&emsp; #check if pods is ready  
+
 $ kubectl port-forward deployment/flask-app < port >:5000  
 
 
