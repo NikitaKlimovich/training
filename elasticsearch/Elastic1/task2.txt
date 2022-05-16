@@ -1,0 +1,24 @@
+Для каждой валюты определить максимальный курс продажи и отсортировать результат по возрастанию курса.
+
+GET currency_rates/_search
+{
+  "size": 0, 
+  "aggs": {
+    "currency_type": {
+      "terms": {
+        "field": "currency",
+        "size": 3,
+        "order": {
+          "max_value": "asc"
+        }
+      },
+      "aggs": {
+        "max_value": {
+          "max": {
+            "field": "buy_rate"
+          }
+        }
+      }
+    }
+  }
+}
