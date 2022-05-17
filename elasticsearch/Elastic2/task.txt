@@ -2,7 +2,7 @@ PUT elasticsearch_cluster
 {
   "settings": {
     "number_of_shards": 3,
-    "number_of_replicas": 3
+    "number_of_replicas": 1
   }
 }
 
@@ -10,6 +10,7 @@ PUT /elasticsearch_cluster/_doc/1
 {
   "zone":"us-central1-a",
   "instance":"instance #0",
+  "name":"GCP.ES.DATAHOT.N2.68X10X45",
   "node":"master eligible, data, ingest",
   "is_master": false
 }
@@ -18,6 +19,7 @@ PUT /elasticsearch_cluster/_doc/2
 {
   "zone":"us-central1-b",
   "instance":"instance #1",
+  "name": "GCP.ES.DATAHOT.N2.68X10X45",
   "node":"master eligible, data, ingest",
   "is_master": true
 }
@@ -26,6 +28,29 @@ PUT /elasticsearch_cluster/_doc/3
 {
   "zone":"us-central1-c",
   "instance":"tiebreaker #2",
+  "name": "GCP.ES.MASTER.N2.68X32X45",
   "node":"master eligible",
   "is_master": false
+}
+
+PUT /elasticsearch_cluster/_doc/4
+{
+  "zone":"us-central1-a",
+  "instance":"instance #0",
+  "name":"GCP.ENTERPRISESEARCH.N2.68X32X45"
+}
+
+
+PUT /elasticsearch_cluster/_doc/5
+{
+  "zone":"us-central1-a",
+  "instance":"instance #0",
+  "name":"GCP.KIBANA.N2.68X32X45"
+}
+
+PUT /elasticsearch_cluster/_doc/6
+{
+  "zone":"us-central1-a",
+  "instance":"instance #0",
+  "name":"GCP.INTEGRATIONSSERVER.N2.68X32X45"
 }

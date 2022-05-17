@@ -7,14 +7,6 @@ GET currency_rates/_search
       "must": [
         {
           "range": {
-            "rate_date": {
-              "gte": "2022-05-14",
-              "lt": "2022-05-15"
-            }
-          }
-        },
-        {
-          "range": {
             "sale_rate": {
               "gte": 2.5,
               "lte": 2.7
@@ -22,6 +14,16 @@ GET currency_rates/_search
           }
         }
       ],
+      "filter": [
+        {
+        "range": {
+            "rate_date": {
+              "gte": "2022-05-14",
+              "lt": "2022-05-15"
+            }
+          }
+        }
+      ], 
       "must_not": [
         {
           "match": {
